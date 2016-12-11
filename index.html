@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset = "UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>TRIVIA GAME</title>
+	<!--Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!--custom css-->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<script
+	  src="https://code.jquery.com/jquery-3.1.1.js"
+	  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+	  crossorigin="anonymous"></script>
+	<script src="assets/javascript/data.js"></script>
+	<script src="assets/javascript/app.js"></script>
+
+
+</head>
+<body > 
+
+<div class="container">
+  <div class="jumbotron" id="header">
+    <h1>Test your Javascript skills!</h1> 
+    <div> You have <span id="timer">30</span> seconds to go! </div>
+  </div>
+</div>
+
+<div class="container" id="wrapper">
+
+	<div class="row">
+		<div class="col-md-12 mainQuestion">
+			<div id="questionDiv"></div>
+		</div>
+	</div>
+
+	<div class = "row">
+		<div class="col-md-5 choiceAns" id="choice_1" data-index="1">
+		</div>
+		<div class="col-md-5 choiceAns" id="choice_2" data-index="2">
+		</div>
+
+	</div>
+	<div class = "row">
+		<div class="col-md-5 choiceAns" id="choice_3" data-index="3">
+		</div>
+		<div class="col-md-5 choiceAns" id="choice_4" data-index="4">
+		</div>
+
+	</div>
+</div>
+
+
+</body>
+</html>

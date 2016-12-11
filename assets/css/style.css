@@ -1,0 +1,64 @@
+html, body {
+	min-height: 100%;
+	position: relative;
+}
+body {
+	background: url(../images/background-js.gif);
+	background-repeat:no-repeat;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+}
+
+#header{
+	background-color: rgba(255,255,255,0.5);
+	text-align: center;
+	height: auto;
+
+}
+
+#wrapper{
+	margin: 0 auto;
+	text-align: center;
+	border: 5px solid red;
+	width: 1000px;
+}
+
+#timer{
+	font-size: 48px;
+	background-color: #000000;
+	color: yellow;
+	padding: 10px;
+}
+
+.choiceAns{
+	background-color: yellow;
+	opacity: .8;
+	font-size: 24px;
+	margin: 10px;
+	text-align: center;
+	border-radius: 5px;
+	border: 1px solid black;
+	padding: 5px;
+}
+
+.choiceAns:hover{
+	background-color: black;
+	color: yellow;
+
+	border: 1px solid red;
+
+}
+.mainQuestion{
+	background-color: black;
+	font-size: 30px;
+	color: yellow;
+}
+
+.glyphicon-ok{
+	color : green;
+}
+
+.glyphicon-remove{
+	color: red;
+}
