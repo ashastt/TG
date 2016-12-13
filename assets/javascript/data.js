@@ -5,136 +5,136 @@ var dataBank = [
 		question : "Javascript is a ______ language",
 		answer: ['Programming', "Application", "Scripting", "None of the above"],
 		rightAnsIndex: 2,
-		qaURL: ""
+		qaURL: "assets/images/js-11.gif"
 	},
 
 	{	
 		index: 1,
 		question : "Javascript is a ______ language",
 		answer: ['Compiled', "Interpreted", "Both", "None"],
-		rightAnsIndex: 2,
-		qaURL: ""
+		rightAnsIndex: 1,
+		qaURL: "assets/images/js-2.jpg"
 	}, 
 
 	{	
 		index: 2,
 		question : "Integer Variable is declared using following syntax in JavaScript.",
 		answer: ['Integer num;', "var num", "int num", "all the above"],
-		rightAnsIndex: 2,
-		qaURL: ""
+		rightAnsIndex: 1,
+		qaURL: "assets/images/js-3.jpg"
 	}, 
 
 	{	
 		index: 3,
 		question : "var num; Is a ______ statement.",
 		answer: ['Instantiation', "Declaration", "Globalization", "Initialization"],
-		rightAnsIndex: 2,
-		qaURL: ""
+		rightAnsIndex: 1,
+		qaURL: "assets/images/js-4.jpg"
 	}, 
 	{
 		index: 4,
 		question : "Add and Assignment operator is shown by this symbol.",
 		answer: ['+==', "+=", "=+", "==+"],
-		rightAnsIndex: 2,
-		qaURL: ""
+		rightAnsIndex: 1,
+		qaURL: "assets/images/js-5.jpg"
 	},
 	{
 		index: 5,
 		question : "'===' operator is _______________.",
 		answer: ['is equal to', "is equal to and same type", "is equal to and different type", "assignment"],
-		rightAnsIndex: 2,
-		qaURL: ""
+		rightAnsIndex: 1,
+		qaURL: "assets/images/js-6.jpg"
 	},
 	{
 		index: 6,
 		question : "'+=' operator can operate on following data values.",
 		answer: ['Float', "String", "Integer", "All the above"],
-		rightAnsIndex: 4,
-		qaURL: ""
+		rightAnsIndex: 3,
+		qaURL: "assets/images/js-7.jpg"
 	},
 	{
 		index: 7,
 		question : "JavaScript Statements are executed by ________ .",
 		answer: ['Server', "JVM", "Compiler", "Browser"],
-		rightAnsIndex: 4,
-		qaURL: ""
+		rightAnsIndex: 3,
+		qaURL: "assets/images/js-8.jpg"
 	},
 	{
 		index: 8,
 		question : "Which of the following statement is used to declare variable in JavaScript ?",
 		answer: ['Assignment', "Declaration", "Conditional", "Executable"],
-		rightAnsIndex: 2,
-		qaURL: ""
+		rightAnsIndex: 1,
+		qaURL: "assets/images/js-9.jpg"
 	},
 	{
 		index: 9,
 		question : "Which built-in method returns the length of the string?",
 		answer: ['length()', "index()", "size()", "All of the above"],
-		rightAnsIndex: 1,
-		qaURL: ""
+		rightAnsIndex: 0,
+		qaURL: "assets/images/js-10.jpg"
 	},
 	{
 		index: 10,
-		question : "Which of the below is used in Java script to insert special characters?",
-		answer: ['%', ' \ ', "&", "^"],
+		question : "What is the correct JavaScript syntax to write 'Hello World'?",
+		answer: ['System.out.println("Hello World")', 'println ("Hello World")', "document.write('Hello World')", "response.write('Hello World')"],
+		rightAnsIndex: 2,
+		qaURL: "assets/images/js-12.gif"
+	},
+	{
+	 	index: 11,
+	 	question : "What is the correct syntax for referring to an external script called 'abc.js'?",
+	 	answer: ['< script href=" abc.js" >', '< script name=" abc.js" >', '< script src=" abc.js" >', "None of the above"],
+	 	rightAnsIndex: 2,
+	 	qaURL: "assets/images/js-13.gif"
+	 },
+	{
+		index: 12,
+		question : "Which of the following best describes JavaScript?",
+		answer: [' a low-level programming language.', "a scripting language precompiled in the browser.", "a compiled scripting language.", " an object-oriented scripting language."],
+		rightAnsIndex: 3,
+		qaURL: "assets/images/js-14.gif"
+	},
+	{
+		index: 13,
+		question : "Using _______ statement is how you test for a specific condition.",
+		answer: ['select', "if", "switch", "for"],
 		rightAnsIndex: 1,
-		qaURL: ""
+		qaURL: "assets/images/js-15.gif"
+	},
+	{
+		index: 14,
+		question : "What is mean by 'this' keyword in javascript?",
+		answer: ['It refers current object', "It referes previous object", "It is variable which contains value", "None of the above"],
+		rightAnsIndex: 0,
+		qaURL: "assets/images/js-16.gif"
+	},
+	{
+		index: 15,
+		question : "Which built-in method returns the characters in a string beginning at the specified location?",
+		answer: ['substr()', "getSubstring()", "slice()", "All the above"],
+		qaURL: "assets/images/js-17.gif"
+	},
+	{
+		index: 16,
+		question : "Which of the following type of variable is visible only within a function where it is defined?",
+		answer: ['Global Variable', "Local variable", "Both ", "None of the above"],
+		rightAnsIndex: 2,
+		qaURL: "assets/images/js-18.gif"
+	},
+	{
+		index: 17,
+		question : "The pop() method of the array does which of the following task ?",
+		answer: ['decrements the total length by 1', "increments the total length by 1", "prints the first element,no effect on length", "None of the above"],
+		rightAnsIndex: 0,
+		qaURL: "assets/images/js-1.jpg"
+	},
+	{
+		index: 18,
+		question : "Which of the following function of Number object returns its string value version?",
+		answer: [' toString()', "toFixed()", " toLocaleString()", " toPrecision()"],
+		rightAnsIndex: 0,
+		qaURL: "assets/images/js-1.jpg"
 	}
-	// {
-	// 	index: 11,
-	// 	question : "var num; Is a ______ statement.",
-	// 	answer: ['Instantiation', "Declaration", "Globalization", "Initialization"],
-	// 	qaURL: ""
-	// },
-	// {
-	// 	index: 12,
-	// 	question : "var num; Is a ______ statement.",
-	// 	answer: ['Instantiation', "Declaration", "Globalization", "Initialization"],
-	// 	qaURL: ""
-	// },
-	// {
-	// 	index: 13,
-	// 	question : "var num; Is a ______ statement.",
-	// 	answer: ['Instantiation', "Declaration", "Globalization", "Initialization"],
-	// 	qaURL: ""
-	// },
-	// {
-	// 	index: 14,
-	// 	question : "var num; Is a ______ statement.",
-	// 	answer: ['Instantiation', "Declaration", "Globalization", "Initialization"],
-	// 	qaURL: ""
-	// },
-	// {
-	// 	index: 15,
-	// 	question : "var num; Is a ______ statement.",
-	// 	answer: ['Instantiation', "Declaration", "Globalization", "Initialization"],
-	// 	qaURL: ""
-	// },
-	// {
-	// 	index: 16,
-	// 	question : "var num; Is a ______ statement.",
-	// 	answer: ['Instantiation', "Declaration", "Globalization", "Initialization"],
-	// 	qaURL: ""
-	// },
-	// {
-	// 	index: 17,
-	// 	question : "var num; Is a ______ statement.",
-	// 	answer: ['Instantiation', "Declaration", "Globalization", "Initialization"],
-	// 	qaURL: ""
-	// }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

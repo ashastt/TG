@@ -24,32 +24,64 @@
 
 <div class="container" id = "header">
     <h1>TEST YOUR JAVASCRIPT SKILLS!</h1> 
-    <div> You have <span id="timer">10</span> seconds to go! </div>
+    <div> You have <span id="timer">0</span> seconds to go! </div>
 </div>
 
 <div class="container" id="wrapper">
 
-	<div class="row">
-		<div class="col-md-12 mainQuestion">
-			<div id="questionDiv"></div>
+	<div id="startDiv">
+		<div class="row">
+			<div class="col-md-12">
+				<div id="readyToPlay">
+					Are you ready to take on the challenge?
+				</div>
+				<div>
+				<button class='btn btn-success' id="startBtn"> Begin </button>	
+				</div>			
+			</div>
 		</div>
 	</div>
 
-	<div class = "row">
-		<div class="col-md-5 col-md-offset-1 choiceAns" id="choice_1" data-index="1">	
-		</div>
-		
-		<div class="col-md-5 col-md-offset-1 choiceAns" id="choice_2" data-index="2">
-		</div>
-
-	</div>
-	<div class = "row">
-		<div class="col-md-5 col-md-offset-1 choiceAns" id="choice_3" data-index="3">
-		</div>
-		<div class="col-md-5 col-md-offset-1 choiceAns" id="choice_4" data-index="4">
+	<div class="playDiv">
+		<div class="row">
+			<div class="col-md-12 mainQuestion">
+				<div id="questionDiv"></div>
+			</div>
 		</div>
 
+		<div id ="answersDiv">
+			<div class = "row">
+				<div class="col-md-5 col-md-offset-1 choiceAns" id="choice_0" data-index="0">	
+				</div>
+				
+				<div class="col-md-5 col-md-offset-1 choiceAns" id="choice_1" data-index="1">
+				</div>
+
+			</div>
+			<div class = "row">
+				<div class="col-md-5 col-md-offset-1 choiceAns" id="choice_2" data-index="2">
+				</div>
+				<div class="col-md-5 col-md-offset-1 choiceAns" id="choice_3" data-index="3">
+				</div>
+
+			</div>
+		</div>
 	</div>
+
+	<div  id ="resultsDiv">
+		<div class = "row">
+			<div class="col-md-6" style="text-align: center; margin-top: 40px;"> 
+				You GOT IT WRONG! <br>
+				The CORRECT ANSWER IS:
+				<div id="rightAnswer"></div>
+			</div>
+			<div class="col-md-6"> 
+				<div id="result-img"></div>
+			</div>
+		</div>
+	</div>	
+
+
 </div>
 
 <!-- Modal -->
