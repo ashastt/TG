@@ -1,2 +1,4 @@
 # Trivia_Game
-Basic Trivia game using Bootstrap, Javascript and Jquery.
+Javascript Trivia game using Bootstrap, Javascript and Jquery.
+
+https://ashagm.github.io/Trivia_Game/
