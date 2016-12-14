@@ -33,7 +33,8 @@ $(document).ready(function(){
 });
 
 function startGame(){
-	console.log('In startGame().........');
+	sound("start");
+	console.log('In startGame().........');	
 	toggleDivs('show');
 	game.getRandomQuestion();
 	stopwatch.reset();
@@ -82,7 +83,7 @@ var game = {
 		if(isTimeUp && totalQuestions <=10){
 			unansweredQns++;
 			console.log('unansweredQns', unansweredQns);
-			this.showCorrect();
+			this.showCorrect('missed');
 			setTimeout(startGame, 5000);
 
 		}else{
@@ -104,6 +105,7 @@ var game = {
 
 		rightAnswers++;
 			// console.log('rightAnswers',rightAnswers);
+			this.showCorrect('right');
 
 		}else{			
 			// $(this).prepend("<span class='glyphicon glyphicon-remove'></span>    ");
@@ -111,7 +113,7 @@ var game = {
 			$('#' +idName).prepend("<span class='glyphicon glyphicon-remove'></span>       ");
 			wrongAnswers++;
 			// console.log('wrongAnswers',wrongAnswers);
-			this.showCorrect();
+			this.showCorrect('wrong');
 		}
 
 		if(totalQuestions <= 10){
@@ -125,9 +127,23 @@ var game = {
 
 	},
 
-	showCorrect : function(){
+	showCorrect : function(str){
 		toggleDivs('pause');
 		// console.log('showCorrect', this.correctAnswer);
+
+		if(str ==='right'){
+			sound('right');
+			$('#statusAnswer').html(" YOU GOT THAT RIGHT! <BR><BR> The CORRECT ANSWER IS ");
+			$('#statusAnswer').css("color", 'green');
+		}else if (str === 'wrong'){
+			sound('wrong');
+			$('#statusAnswer').html(" YOU GOT THAT WRONG! <BR><BR>The CORRECT ANSWER IS ");
+			$('#statusAnswer').css("color", 'red');	
+		}else if (str === 'missed'){
+			$('#statusAnswer').html(" YOU MISSED ANSWERING ! <BR><BR>The CORRECT ANSWER IS ");
+			$('#statusAnswer').css("color", 'red');	
+		}
+
 		$('#rightAnswer').html(this.correctAnswer);
 		$('#jsImg').find('img').attr('src', '');
 
@@ -138,6 +154,7 @@ var game = {
 	},
 
 	showResults : function(){
+		sound('end');
 		let results = 
 		 "Right Answers : " + rightAnswers + '<br>' + 
 		 "Wrong Answers : " + wrongAnswers + '<br>' + 
@@ -183,6 +200,7 @@ var stopwatch = {
   		game.updateStatus();
 
   	}else{
+  		sound('tick');
     	stopwatch.time--;
     	console.log(stopwatch.time);
   		currentTime = stopwatch.timeConverter(stopwatch.time);
@@ -238,6 +256,24 @@ function toggleDivs(action){
 	}
 
 }
+
+function sound(str){
+    var audio = document.createElement("audio");
+    if(str ==="right"){
+    	audio.src = "assets/sounds/right.wav";
+	}else if(str === "wrong"){
+		audio.src = "assets/sounds/wrong.wav";
+	}else if(str === "click"){
+		audio.src = "assets/sounds/click.wav";
+	}else if(str === "tick"){
+		audio.src = "assets/sounds/tick.wav";
+	}else if(str === "end"){
+		audio.src = "assets/sounds/end.wav";
+	}else if(str === "start"){
+		audio.src = "assets/sounds/start.wav";
+	}
+    audio.play();   
+	}
 
 
 

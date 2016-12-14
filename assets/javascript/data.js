@@ -134,8 +134,28 @@ var dataBank = [
 		answer: [' toString()', "toFixed()", " toLocaleString()", " toPrecision()"],
 		rightAnsIndex: 0,
 		qaURL: "assets/images/js-1.jpg"
+	},
+	{
+		index: 19,
+		question : "Which built-in method combines the text of two strings and returns a new string?",
+		answer: [' append()', "concat()", " attach()", " All the above"],
+		rightAnsIndex: 1,
+		qaURL: "assets/images/js-17.gif"
+	},
+	{
+		index: 20,
+		question : "Which of the following is a valid type of function javascript supports?",
+		answer: ['Named functions', "Anonymous functions", " Both", " None of the above"],
+		rightAnsIndex: 2,
+		qaURL: "assets/images/js-17.gif"
+	},
+	{
+		index: 21,
+		question : "Which of the following function of Array object calls a function for each element in the array?",
+		answer: ['concat()', "every()", " forEach()", " filter()"],
+		rightAnsIndex: 2,
+		qaURL: "assets/images/js-17.gif"
 	}
-
 
 
 ];

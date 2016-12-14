@@ -51,7 +51,7 @@ body {
 	font-size: 24px;
 	text-align: center;
 	border-radius: 5px;
-	border: 2px solid black;
+	border: 5px solid black;
 	margin-top: 20px;
 
 }
@@ -59,7 +59,7 @@ body {
 .choiceAns:hover{
 	background-color: black;
 	color: #FCDC3B;
-	border: 1px solid red;
+	border: 5px solid #FFEC8B;
 
 }
 .mainQuestion{
@@ -111,11 +111,13 @@ body {
 	background-color: #FFEC8B;
 	height: 350px;
 	opacity: .9;
-	font-size: 24px;
+	font-size: 30px;
+	font-weight: bold;
 	text-align: center;
 	border-radius: 5px;
 	border: 5px solid black;
 	margin-top: 20px;
+	padding-left : 10px;
 
 }
 
@@ -145,10 +147,13 @@ body {
 #rightAnswer{
 	color: red;
 	margin-top: 20px;
+	background-color: #000000;
+	padding: 10px;
+	opacity: .7;
 }
 
 #answersDiv{
-	margin :auto;
+	margin : 0 auto;
 }
 
 #result-img{
