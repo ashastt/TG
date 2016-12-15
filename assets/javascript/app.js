@@ -1,17 +1,19 @@
 var isGameStarted = false;
 var isGameEnd = false;
-var isTimeUp = false;
+var isAnswerChosen = false;
 var totalQuestions = 0;
 var rightAnswers = 0;
 var wrongAnswers = 0;
 var unansweredQns = 0;
+var randomQnsIndexList = [];
 
 
 $(document).ready(function(){
-	toggleDivs('hide');
+	toggleDivs('hide');	
 	
 	$('#startBtn').on('click', function(){
 		isGameStarted = true;
+		generateUniqueQuestions();
 		startGame();
 	});
 
@@ -26,15 +28,15 @@ $(document).ready(function(){
 		 	$('#myModal').find('.modal-body').html(" ");
 		});
 		isGameStarted = true;
+		generateUniqueQuestions();
 		startGame();
-	});
-	
+	});	
 
 });
 
 function startGame(){
 	sound("start");
-	console.log('In startGame().........');	
+	// console.log('In startGame().........');	
 	toggleDivs('show');
 	game.getRandomQuestion();
 	stopwatch.reset();
@@ -42,15 +44,28 @@ function startGame(){
 }
 
 function resetGame(){
-	console.log('In resetGame().........');
+	// console.log('In resetGame().........');
 	stopwatch.stop();
 	isGameStarted = false;
 	isGameEnd = false;
-	isTimeUp = false;
+	isAnswerChosen = false;
 	totalQuestions = 0;
 	rightAnswers = 0;
 	wrongAnswers = 0;
 	unansweredQns = 0;
+
+	randomQnsIndexList = [];
+}
+
+
+function generateUniqueQuestions(){
+	while(randomQnsIndexList.length <10){
+    var randomnumber = Math.ceil(Math.random()* dataBank.length-1)
+    if(randomQnsIndexList.indexOf(randomnumber) > -1) 
+    	continue;
+    randomQnsIndexList[randomQnsIndexList.length] = randomnumber;
+	}
+   console.log(randomQnsIndexList);
 }
 
 
@@ -62,25 +77,37 @@ var game = {
 	correctImage : '',
 
 	getRandomQuestion : function(){
-		console.log('In getRandomQuestion().........');
+		// console.log('In getRandomQuestion().........');
+		// let questionIndex = Math.floor(Math.random() * dataBank.length);
+		var questionIndex;
+		if (randomQnsIndexList.length > 0){
+			questionIndex = randomQnsIndexList.pop(randomQnsIndexList.length-1);
+		}
+
+		console.log('questionIndex =' + questionIndex);
+
+		if(questionIndex != undefined){
+
+			console.log('Got questionIndex and answers');
+			$("#questionDiv").html(dataBank[questionIndex].question);
+			$("#choice_0").html(dataBank[questionIndex].answer[0]);
+			$("#choice_1").html(dataBank[questionIndex].answer[1]);
+			$("#choice_2").html(dataBank[questionIndex].answer[2]);
+			$("#choice_3").html(dataBank[questionIndex].answer[3]);
+
+			this.rightAnswerIndex = dataBank[questionIndex].rightAnsIndex;
+			this.correctAnswer = dataBank[questionIndex].answer[this.rightAnswerIndex];
+			this.correctImage = dataBank[questionIndex].qaURL;
+
+		}
+
 		totalQuestions ++;
-		let questionIndex = Math.floor(Math.random() * dataBank.length);
-
-		$("#questionDiv").html(dataBank[questionIndex].question);
-		$("#choice_0").html(dataBank[questionIndex].answer[0]);
-		$("#choice_1").html(dataBank[questionIndex].answer[1]);
-		$("#choice_2").html(dataBank[questionIndex].answer[2]);
-		$("#choice_3").html(dataBank[questionIndex].answer[3]);
-
-		this.rightAnswerIndex = dataBank[questionIndex].rightAnsIndex;
-		this.correctAnswer = dataBank[questionIndex].answer[this.rightAnswerIndex];
-		this.correctImage = dataBank[questionIndex].qaURL;
 
 	},
 
 	updateStatus : function(){
 
-		if(isTimeUp && totalQuestions <=10){
+		if(totalQuestions <=10){
 			unansweredQns++;
 			console.log('unansweredQns', unansweredQns);
 			this.showCorrect('missed');
@@ -90,11 +117,10 @@ var game = {
 			this.showResults();
 			resetGame();
 		}
-		
-		isTimeUp = false;
 	},
 
 	checkAnswers : function(index){
+		// console.log("Index sent = " + index);
 		// console.log("in checkAnswers totalQuestions" + totalQuestions);
 		if(index === this.rightAnswerIndex ){
 
@@ -108,7 +134,7 @@ var game = {
 			this.showCorrect('right');
 
 		}else{			
-			// $(this).prepend("<span class='glyphicon glyphicon-remove'></span>    ");
+			
 			let idName = $('[data-index="' + index + '"]').attr('id');
 			$('#' +idName).prepend("<span class='glyphicon glyphicon-remove'></span>       ");
 			wrongAnswers++;
@@ -116,7 +142,7 @@ var game = {
 			this.showCorrect('wrong');
 		}
 
-		if(totalQuestions <= 10){
+		if(totalQuestions < 10){
 			setTimeout(startGame, 5000);
 
 		}else{
@@ -129,17 +155,17 @@ var game = {
 
 	showCorrect : function(str){
 		toggleDivs('pause');
-		// console.log('showCorrect', this.correctAnswer);
 
 		if(str ==='right'){
 			sound('right');
-			$('#statusAnswer').html(" YOU GOT THAT RIGHT! <BR><BR> The CORRECT ANSWER IS ");
+			$('#statusAnswer').html(" YOU GOT THAT RIGHT! <img src='" + "assets/images/clap.gif" + "' width= 50 height =50>" + "<BR><BR> THE CORRECT ANSWER IS ");
 			$('#statusAnswer').css("color", 'green');
 		}else if (str === 'wrong'){
 			sound('wrong');
-			$('#statusAnswer').html(" YOU GOT THAT WRONG! <BR><BR>The CORRECT ANSWER IS ");
+			$('#statusAnswer').html(" YOU GOT THAT WRONG! <img src='" + "assets/images/wrong.gif" + "' width= 50 height =50>" + "<BR> THE CORRECT ANSWER IS ");
 			$('#statusAnswer').css("color", 'red');	
 		}else if (str === 'missed'){
+			sound('missed');
 			$('#statusAnswer').html(" YOU MISSED ANSWERING ! <BR><BR>The CORRECT ANSWER IS ");
 			$('#statusAnswer').css("color", 'red');	
 		}
@@ -178,10 +204,10 @@ var myWatch;
 
 var stopwatch = {
 
-  time: 20,
+  time: 15,
 
   reset: function() {
-    stopwatch.time = 20;
+    stopwatch.time = 15;
   },
 
   start: function() {
@@ -196,13 +222,12 @@ var stopwatch = {
   	// console.log("in stopwatch:count");
   	if(stopwatch.time == 0){
   		stopwatch.stop();
-  		isTimeUp = true;
   		game.updateStatus();
 
   	}else{
   		sound('tick');
     	stopwatch.time--;
-    	console.log(stopwatch.time);
+    	// console.log(stopwatch.time);
   		currentTime = stopwatch.timeConverter(stopwatch.time);
   	}
 
@@ -271,6 +296,8 @@ function sound(str){
 		audio.src = "assets/sounds/end.wav";
 	}else if(str === "start"){
 		audio.src = "assets/sounds/start.wav";
+	}else if(str === "missed"){
+		audio.src = "assets/sounds/sad.wav";
 	}
     audio.play();   
 	}

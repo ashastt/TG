@@ -81,9 +81,10 @@ body {
 	color: red;
 }
 
+#results-header,
 #resultsLabel{
 	font-size: 40px;
-	background-color: #ffffff;
+	background-color: #FFEC8B;
 	color: #000000;
 	text-align: center;
 }
@@ -98,6 +99,7 @@ body {
 
 #resultsFooter{
 	text-align: center;
+	background-color: #FFEC8B;
 }
 
 .modalButton{
@@ -159,4 +161,15 @@ body {
 #result-img{
 	width: 300px;
 	height: 300px;
+}
+
+#footer{
+	background-color: #000000;
+	color: #FFEC8B;
+	height: 20px;
+	font-size: 14px;
+	right: 0;
+	bottom:0;
+	position: absolute;
+	text-align: center;
 }
