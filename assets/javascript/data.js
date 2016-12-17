@@ -103,7 +103,7 @@ var dataBank = [
 	},
 	{
 		index: 14,
-		question : "What is mean by 'this' keyword in javascript?",
+		question : "What is meant by 'this' keyword in javascript?",
 		answer: ['It refers current object', "It referes previous object", "It is variable which contains value", "None of the above"],
 		rightAnsIndex: 0,
 		qaURL: "assets/images/js-15.gif"
@@ -111,7 +111,7 @@ var dataBank = [
 	{
 		index: 15,
 		question : "Which built-in method returns the characters in a string beginning at the specified location?",
-		answer: ['substr()', "getSubstring()", "slice()", "All the above"],
+		answer: ['substr', "getSubstring", "slice", "All the above"],
 		qaURL: "assets/images/js-16.gif"
 	},
 	{
@@ -138,7 +138,7 @@ var dataBank = [
 	{
 		index: 19,
 		question : "Which built-in method combines the text of two strings and returns a new string?",
-		answer: [' append()', "concat()", " attach()", " All the above"],
+		answer: [' append', "concat", " attach", " All the above"],
 		rightAnsIndex: 1,
 		qaURL: "assets/images/js-20.gif"
 	},
@@ -151,7 +151,7 @@ var dataBank = [
 	},
 	{
 		index: 21,
-		question : "Which of the following function of Array object calls a function for each element in the array?",
+		question : "Which function of Array object calls a function for each element in the array?",
 		answer: ['concat()', "every()", " forEach()", " filter()"],
 		rightAnsIndex: 2,
 		qaURL: "assets/images/js-22.jpg"
@@ -175,21 +175,28 @@ var dataBank = [
 		question : "Which of the following is not a valid JavaScript variable name?",
 		answer: ['2java', " _java_and_java_names", " Javaandjava", " All are valid"],
 		rightAnsIndex: 0,
-		qaURL: "assets/images/js-17.gif"
+		qaURL: "assets/images/js-25.jpg"
 	},
 	{
 		index: 25,
-		question : "______is a builtin function which can be used to execute another function after a given time interval.",
+		question : "______is a builtin function used to execute another function after a time interval.",
 		answer: ['SetTimeout', "Timeout", " Both", " None of the above"],
 		rightAnsIndex: 0,
-		qaURL: "assets/images/js-20.gif"
+		qaURL: "assets/images/js-26.gif"
 	},
 	{
 		index: 26,
 		question : "You can refresh the webpage in JavaScript by using __________ method.",
 		answer: ['window. reload', "location. reload", " window. refresh", " page. refresh"],
 		rightAnsIndex: 1,
-		qaURL: "assets/images/js-21.jpg"
+		qaURL: "assets/images/js-27.jpg"
+	},
+	{
+		index: 27,
+		question : "______method evaluates a string in the context of the specified object.",
+		answer: ['eval', "parseInt", " parseFloat", " eFloat"],
+		rightAnsIndex: 0,
+		qaURL: "assets/images/js-29.jpg"
 	}
 
 

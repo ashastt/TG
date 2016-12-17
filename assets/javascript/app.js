@@ -32,6 +32,14 @@ $(document).ready(function(){
 		startGame();
 	});	
 
+	$('#restart').click(function(){
+		$('#myModal').modal('hide');
+		$("#myModal").on("hidden.bs.modal", function(){
+		 	$('#myModal').find('.modal-body').html(" ");
+		});
+		location.reload();
+	});	
+
 });
 
 function startGame(){
@@ -84,11 +92,11 @@ var game = {
 			questionIndex = randomQnsIndexList.pop(randomQnsIndexList.length-1);
 		}
 
-		console.log('questionIndex =' + questionIndex);
+		// console.log('questionIndex =' + questionIndex);
 
 		if(questionIndex != undefined){
 
-			console.log('Got questionIndex and answers');
+			// console.log('Got questionIndex and answers');
 			$("#questionDiv").html(dataBank[questionIndex].question);
 			$("#choice_0").html(dataBank[questionIndex].answer[0]);
 			$("#choice_1").html(dataBank[questionIndex].answer[1]);
@@ -101,7 +109,7 @@ var game = {
 
 		}
 
-		totalQuestions ++;
+		totalQuestions++ ;
 
 	},
 
@@ -109,7 +117,7 @@ var game = {
 
 		if(totalQuestions <=10){
 			unansweredQns++;
-			console.log('unansweredQns', unansweredQns);
+			// console.log('unansweredQns', unansweredQns);
 			this.showCorrect('missed');
 			setTimeout(startGame, 5000);
 
@@ -120,8 +128,9 @@ var game = {
 	},
 
 	checkAnswers : function(index){
-		// console.log("Index sent = " + index);
-		// console.log("in checkAnswers totalQuestions" + totalQuestions);
+
+		// var showCorrectMethod = this.showCorrect;
+		
 		if(index === this.rightAnswerIndex ){
 
 		// $('*[data-customerID="22"]');
@@ -133,6 +142,11 @@ var game = {
 			// console.log('rightAnswers',rightAnswers);
 			this.showCorrect('right');
 
+			// 	setTimeout(function(){
+			// 	showCorrectMethod('right');
+			// }, 2000); 
+
+
 		}else{			
 			
 			let idName = $('[data-index="' + index + '"]').attr('id');
@@ -140,6 +154,10 @@ var game = {
 			wrongAnswers++;
 			// console.log('wrongAnswers',wrongAnswers);
 			this.showCorrect('wrong');
+			
+			// setTimeout(function(){
+			// 	showCorrectMethod('wrong');
+			// }, 2000); 
 		}
 
 		if(totalQuestions < 10){
@@ -154,6 +172,8 @@ var game = {
 	},
 
 	showCorrect : function(str){
+		// console.log(str, this);
+
 		toggleDivs('pause');
 
 		if(str ==='right'){
@@ -173,7 +193,7 @@ var game = {
 		$('#rightAnswer').html(this.correctAnswer);
 		$('#jsImg').find('img').attr('src', '');
 
-		$("#result-img").html("<img width='440' height= '340' src='" 
+		$("#result-img").html("<img width='450' height= '310' src='" 
 						+ this.correctImage
 						+ "'>");
 
